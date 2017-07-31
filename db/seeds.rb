@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+PhoneNumber.create([
+  { number: '+12345678910' },
+  { number: '+441915556666' }
+])
