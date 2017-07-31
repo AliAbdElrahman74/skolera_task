@@ -1,0 +1,28 @@
+<h1>Editing <%= @phone_number.number %></h1>
+
+<% if @phone_number.errors.any? %>
+  <h3>
+    <%= pluralize(@phone_number.errors.count, "error") %>
+  </h3>
+  <ul>
+    <% @phone_number.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@phone_number) do |f| %>
+  <p>
+    <%= f.label :nickname, "Nickname" %>
+    <%= f.text_field :nickname %>
+  </p>
+
+  <p>
+    <%= f.label :enabled, "Enabled?" %>
+    <%= f.check_box :enabled %>
+  </p>
+
+  <p>
+    <%= link_to('Cancel', settings_index_path) %> <%= f.submit %>
+  </p>
+<% end %>

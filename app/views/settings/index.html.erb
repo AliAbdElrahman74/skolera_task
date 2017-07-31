@@ -1,7 +1,17 @@
 <h1>Settings</h1>
 
-<ul>
+<p>
+  <%= link_to('Add number', new_phone_number_path) %>
+</p>
+
+<ul class="phone-number-list">
   <% @phone_numbers.each do |phone_number| %>
-    <li><%= phone_number.number %></li>
+    <li>
+      <%= phone_number.number %>
+      <%= phone_number.nickname.present? ? "\"#{phone_number.nickname}\"" : '' %>
+      (<%= phone_number.enabled? ? 'Enabled' : 'Disabled' %>)
+      <%= link_to('Edit', edit_phone_number_path(phone_number)) %>
+      <%= link_to 'Delete', phone_number_path(phone_number), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
 </ul>

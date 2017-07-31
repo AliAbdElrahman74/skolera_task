@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-PhoneNumber.create([
-  { number: '+12345678910' },
-  { number: '+441915556666' }
-])
+[
+  { number: '+12345678910',  enabled: true },
+  { number: '+441915556666', enabled: true, nickname: "UK number" },
+  { number: '+14155556666',  enabled: false }
+].each do |params|
+  number = params.delete(:number)
+  PhoneNumber.find_or_create_by(number: number) do |number|
+    number.enabled = params[:enabled]
+    number.nickname = params[:nickname]
+  end
+end

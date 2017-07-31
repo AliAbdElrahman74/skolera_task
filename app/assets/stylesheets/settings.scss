@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+.phone-number-list {
+  padding: 0;
+
+  li {
+    background: #f8f8f8;
+    padding: 20px 30px;
+    margin: 8px 0;
+    border-radius: 8px;
+    list-style: none;
+  }
+}
+
+label {
+  min-width: 150px;
+  display: inline-block;
+}
+
+.field_with_errors {
+  display: inline-block;
+  background: #ea6;
+
+  input {
+    border: 2px solid #ea6;
+  }
+}

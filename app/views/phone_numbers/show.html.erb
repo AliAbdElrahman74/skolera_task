@@ -1,0 +1,16 @@
+<h1><%= @phone_number.number %></h1>
+<% if @phone_number.nickname.present? %>
+  <h2><%= @phone_number.nickname %></h2>
+<% end %>
+
+<p>
+  This phone number is <%= @phone_number.enabled? ? 'Enabled' : 'Disabled' %>
+</p>
+
+<p>
+  <%= link_to('Edit', edit_phone_number_path(@phone_number)) %>
+</p>
+
+<p>
+  <%= link_to('Back to Settings', settings_index_path) %>
+</p>
