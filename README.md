@@ -1,24 +1,28 @@
-# README
+# Zendesk Talk Interview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello! This is a standard Rails 5 Project. You should be able to get set up by cloning this repo locally and running `bundle install`.
 
-Things you may want to cover:
+To set up the database `bundle exec rake db:migrate db:seed`
 
-* Ruby version
+To run specs `bundle exec rspec`.
 
-* System dependencies
+To run the server `rails s`.
 
-* Configuration
+To open a console `rails c`.
 
-* Database creation
+## Part 1
 
-* Database initialization
+Create a new pull request against this repo that will ensure that any newly added phone numbers are valid international phone numbers. There are gems that will help you achieve this, so please use them.
 
-* How to run the test suite
+Your pull request should include specs that verify that your code behaves as expected.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Part 2
 
-* Deployment instructions
+There is an open pull request in this repo, #1. Please look at this pull request and review it.
 
-* ...
+Things that you should consider include:
+
+* Does it work as described?
+* Is it understandable?
+* Is it well implemented?
+* Is it well tested?
