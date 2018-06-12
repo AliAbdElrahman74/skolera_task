@@ -12,9 +12,13 @@ To open a console `rails c`.
 
 ## Part 1
 
-Create a new pull request against this repo that will ensure that any newly added phone numbers are valid international phone numbers. There are gems that will help you achieve this, so please use them.
+Create a new pull request against this repo that will ensure that any newly added phone numbers are valid international phone numbers.
 
-Your pull request should include specs that verify that your code behaves as expected.
+Please use [`phony`](https://github.com/floere/phony) and no other dependencies.
+
+Your branch should include specs that verify that your code behaves as expected.
+
+Your pull request description should explain your changes and include steps that we can run to verify that your change works.
 
 ## Part 2
 
