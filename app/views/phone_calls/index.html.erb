@@ -18,14 +18,14 @@ Filter: <%= link_to 'All', phone_calls_path %> | <%= link_to 'Ended', phone_call
 
   <tbody>
     <% @phone_calls.each do |phone_call| %>
-      <tr>
+      <%= content_tag :tr, id: dom_id(phone_call) do %>
         <td><%= phone_call.status %></td>
         <td><%= phone_call.phone_number.nickname || phone_call.phone_number.number %></td>
         <td><%= phone_call.agent.name %></td>
         <td><%= link_to 'Show', phone_call %></td>
         <td><%= link_to 'Edit', edit_phone_call_path(phone_call) %></td>
         <td><%= link_to 'Destroy', phone_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
