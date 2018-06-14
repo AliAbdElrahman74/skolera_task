@@ -36,7 +36,7 @@ class PhoneNumbersController < ApplicationController
   def destroy
     @phone_number.destroy
 
-    redirect_to settings_index_path
+    redirect_to phone_numbers_path
   end
 
   private
