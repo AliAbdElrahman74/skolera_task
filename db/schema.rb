@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731140211) do
+ActiveRecord::Schema.define(version: 20180614155847) do
+
+  create_table "agents", force: :cascade do |t|
+    t.string "name"
+    t.string "status"
+    t.boolean "admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "phone_calls", force: :cascade do |t|
+    t.string "status"
+    t.integer "phone_number_id"
+    t.integer "agent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agent_id"], name: "index_phone_calls_on_agent_id"
+    t.index ["phone_number_id"], name: "index_phone_calls_on_phone_number_id"
+  end
 
   create_table "phone_numbers", force: :cascade do |t|
     t.string "number"

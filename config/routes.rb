@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'settings/index'
+  resources :phone_calls
+  resources :agents
+  resources :phone_numbers
 
-  root 'settings#index'
-
-  resources 'phone_numbers'
+  root 'phone_numbers#index'
 end
