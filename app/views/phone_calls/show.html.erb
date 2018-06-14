@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @phone_call.status %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @phone_call.phone_number %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @phone_call.agent %>
+</p>
+
+<%= link_to 'Edit', edit_phone_call_path(@phone_call) %> |
+<%= link_to 'Back', phone_calls_path %>
