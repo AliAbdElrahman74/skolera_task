@@ -18,7 +18,7 @@ Filter: <%= link_to 'All', phone_calls_path %> | <%= link_to 'Ended', phone_call
 
   <tbody>
     <% @phone_calls.each do |phone_call| %>
-      <%= content_tag :tr, id: dom_id(phone_call) do %>
+      <%= content_tag :tr, id: dom_id(phone_call), class: 'phone-call-item' do %>
         <td><%= phone_call.status %></td>
         <td><%= phone_call.phone_number.nickname || phone_call.phone_number.number %></td>
         <td><%= phone_call.agent.name %></td>

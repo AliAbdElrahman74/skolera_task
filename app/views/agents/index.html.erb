@@ -14,7 +14,7 @@
 
   <tbody>
     <% @agents.each do |agent| %>
-      <%= content_tag :tr, id: dom_id(agent) do %>
+      <%= content_tag :tr, id: dom_id(agent), class: 'agent-item' do %>
         <td><%= agent.name %></td>
         <td><%= agent.status %></td>
         <td><%= agent.admin %></td>

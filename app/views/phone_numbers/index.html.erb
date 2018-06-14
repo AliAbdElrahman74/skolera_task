@@ -6,7 +6,7 @@
 
 <ul class="phone-number-list">
   <% @phone_numbers.each do |phone_number| %>
-    <%= content_tag :li, id: dom_id(phone_number) do %>
+    <%= content_tag :li, id: dom_id(phone_number), class: 'phone-number-item' do %>
       <%= phone_number.number %>
       <%= phone_number.nickname.present? ? "\"#{phone_number.nickname}\"" : '' %>
       (<%= phone_number.enabled? ? 'Enabled' : 'Disabled' %>)
