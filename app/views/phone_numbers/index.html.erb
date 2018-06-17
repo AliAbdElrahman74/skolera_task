@@ -1,8 +1,6 @@
 <h1>Phone Numbers</h1>
 
-<p>
-  <%= link_to('Add number', new_phone_number_path) %>
-</p>
+<p><%= link_to 'Add number', new_phone_number_path, class: 'btn success' %></p>
 
 <ul class="phone-number-list">
   <% @phone_numbers.each do |phone_number| %>
