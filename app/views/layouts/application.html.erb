@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <div class="topnav">
+      <%= nav_link 'Agents', agents_path %>
+      <%= nav_link 'Phone Numbers', phone_numbers_path %>
+      <%= nav_link 'Phone Calls', phone_calls_path %>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Phone Calls</h1>
+<p><%= link_to 'New Phone Call', new_phone_call_path, class: 'btn success' %></p>
 
+<p style="margin-top:30px">
 Filter: <%= link_to 'All', phone_calls_path %> | <%= link_to 'Ended', phone_calls_path(status: 'ended') %> | <%= link_to 'In progress', phone_calls_path(status: 'in_progress') %>
-
-<br><br>
+</p>
 
 <table>
   <thead>
@@ -29,7 +30,3 @@ Filter: <%= link_to 'All', phone_calls_path %> | <%= link_to 'Ended', phone_call
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Phone Call', new_phone_call_path %>
