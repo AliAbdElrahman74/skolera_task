@@ -24,12 +24,13 @@ class PhoneNumbersController < ApplicationController
   end
 
   def create
-    @phone_number = PhoneNumber.new(phone_number_params)
-
-    if @phone_number.save
-      redirect_to phone_number_path(@phone_number)
-    else
-      render 'new'
+    if /^\+(?:[0-9] ?){6,14}[0-9]$/ =~ :number
+      @phone_number = PhoneNumber.new(phone_number_params)
+      if @phone_number.save
+        redirect_to phone_number_path(@phone_number)
+      else
+        render 'new'
+      end
     end
   end
 
