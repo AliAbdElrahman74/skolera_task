@@ -2,10 +2,10 @@ class PhoneCallsController < ApplicationController
   before_action :set_phone_call, only: [:show, :edit, :update, :destroy]
 
   def index
-    @phone_calls = PhoneCall.all
-
     if params[:status].present?
-      @phone_calls = @phone_calls.where(status: params[:status])
+      @phone_calls = PhoneCall.where(status: params[:status])
+    else
+      @phone_calls = PhoneCall.all
     end
   end
 
