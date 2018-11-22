@@ -2,7 +2,7 @@ class PhoneNumbersController < ApplicationController
   before_action :set_phone_number, only: [:show, :edit, :update, :destroy]
 
   def index
-    @phone_numbers = PhoneNumber.all
+    @phone_numbers = PhoneNumber.where(:deleted => false)
   end
 
   def show
@@ -34,7 +34,8 @@ class PhoneNumbersController < ApplicationController
   end
 
   def destroy
-    @phone_number.destroy
+    #@phone_number.destroy
+    @phone_number.update_attribute('deleted', true)
 
     redirect_to phone_numbers_path
   end

@@ -2,7 +2,7 @@ class AgentsController < ApplicationController
   before_action :set_agent, only: [:show, :edit, :update, :destroy]
 
   def index
-    @agents = Agent.all
+    @agents = Agent.where(:deleted => false)
   end
 
   def show
@@ -42,7 +42,8 @@ class AgentsController < ApplicationController
   end
 
   def destroy
-    @agent.destroy
+    #@agent.destroy
+    @agent.update_attribute('deleted', true)
     respond_to do |format|
       format.html { redirect_to agents_url, notice: 'Agent was successfully destroyed.' }
       format.json { head :no_content }

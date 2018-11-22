@@ -4,6 +4,7 @@ class CreatePhoneNumbers < ActiveRecord::Migration[5.1]
       t.string :number
       t.string :nickname
       t.boolean :enabled, default: true
+      t.boolean :deleted, default: false
 
       t.timestamps
     end

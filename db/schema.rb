@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180614155847) do
     t.string "name"
     t.string "status"
     t.boolean "admin", default: false
+    t.boolean "deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180614155847) do
     t.string "number"
     t.string "nickname"
     t.boolean "enabled", default: true
+    t.boolean "deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
