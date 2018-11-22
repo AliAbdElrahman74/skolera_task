@@ -1,4 +1,4 @@
-# Interview
+# Skolera Interview
 
 Hello! This is a standard Rails 5 Project. You should be able to get set up by cloning this repo locally:
 
