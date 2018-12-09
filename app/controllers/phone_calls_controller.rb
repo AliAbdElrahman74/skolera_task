@@ -2,8 +2,9 @@ class PhoneCallsController < ApplicationController
   before_action :set_phone_call, only: [:show, :edit, :update, :destroy]
 
   def index
-    @phone_calls = PhoneCall.all
-
+    
+    @phone_calls = PhoneCall.includes(:phone_number ,:agent ).all  
+    
     if params[:status].present?
       @phone_calls = @phone_calls.where(status: params[:status])
     end

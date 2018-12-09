@@ -31,7 +31,7 @@ class AgentsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @agent.update(agent_params)
+      if @agent.update(agent_params_update)
         format.html { redirect_to @agent, notice: 'Agent was successfully updated.' }
         format.json { render :show, status: :ok, location: @agent }
       else
@@ -56,5 +56,10 @@ class AgentsController < ApplicationController
 
     def agent_params
       params.require(:agent).permit!
+    end
+
+    #create this fun to disallow agent change status
+    def agent_params_update
+      params.require(:agent).permit(:name ,:status)
     end
 end
